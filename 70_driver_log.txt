@@ -1,0 +1,52 @@
+2021/04/03 14:17:57 Attempt 1 of http call to http://10.0.0.8:16384/sendlogstoartifacts/info
+2021/04/03 14:17:57 Attempt 1 of http call to http://10.0.0.8:16384/sendlogstoartifacts/status
+[2021-04-03T14:17:58.226511] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train.py', '--C', '0.1', '--max_iter', '50'])
+Script type = None
+[2021-04-03T14:17:59.239900] Entering Run History Context Manager.
+[2021-04-03T14:18:00.059651] Current directory: /mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-141877/azureml/hd_b8ddab6d-5e60-43bc-b263-619af8d2c4de_2/mounts/workspaceblobstore/azureml/HD_b8ddab6d-5e60-43bc-b263-619af8d2c4de_2
+[2021-04-03T14:18:00.059962] Preparing to call script [train.py] with arguments:['--C', '0.1', '--max_iter', '50']
+[2021-04-03T14:18:00.060107] After variable expansion, calling script [train.py] with arguments:['--C', '0.1', '--max_iter', '50']
+
+2021/04/03 14:18:02 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+Stopped: false
+OriginalData: 1
+FilteredData: 0.
+/opt/miniconda/lib/python3.6/site-packages/azureml/dataprep/api/dataflow.py:722: UserWarning: Your pandas and pyarrow versions are incompatible. Please install pyarrow>=0.12.0 for improved performance of to_pandas_dataframe. You can ensure the correct version is installed by running: pip install pyarrow>=0.12.0 --upgrade
+  warnings.warn('Your pandas and pyarrow versions are incompatible. '
+/opt/miniconda/lib/python3.6/site-packages/sklearn/linear_model/logistic.py:433: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+
+
+[2021-04-03T14:18:12.042460] The experiment failed. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+2 items cleaning up...
+Cleanup took 6.024156093597412 seconds
+Starting the daemon thread to refresh tokens in background for process with pid = 106
+Traceback (most recent call last):
+  File "train.py", line 79, in <module>
+    main()
+  File "train.py", line 73, in main
+    model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
+  File "/opt/miniconda/lib/python3.6/site-packages/sklearn/linear_model/logistic.py", line 1288, in fit
+    accept_large_sparse=solver != 'liblinear')
+  File "/opt/miniconda/lib/python3.6/site-packages/sklearn/utils/validation.py", line 761, in check_X_y
+    y = column_or_1d(y, warn=True)
+  File "/opt/miniconda/lib/python3.6/site-packages/sklearn/utils/validation.py", line 797, in column_or_1d
+    raise ValueError("bad input shape {0}".format(shape))
+ValueError: bad input shape (9885, 39)
+
+[2021-04-03T14:18:18.993051] Finished context manager injector with Exception.
+2021/04/03 14:18:20 Could not parse control script error at path: /mnt/batch/tasks/workitems/3451fc27-debd-4e8f-ad74-5da36f1c73b4/job-1/hd_b8ddab6d-5e60-43b_59a3a95c-3b8f-4a9b-9f71-abf05851a6ed/wd/runTaskLetTask_error.json because: File /mnt/batch/tasks/workitems/3451fc27-debd-4e8f-ad74-5da36f1c73b4/job-1/hd_b8ddab6d-5e60-43b_59a3a95c-3b8f-4a9b-9f71-abf05851a6ed/wd/runTaskLetTask_error.json doesn't exist, continuing without
+2021/04/03 14:18:20 Failed to run the wrapper cmd with err: exit status 1
+2021/04/03 14:18:20 Attempt 1 of http call to http://10.0.0.8:16384/sendlogstoartifacts/status
+2021/04/03 14:18:20 mpirun version string: {
+Intel(R) MPI Library for Linux* OS, Version 2018 Update 3 Build 20180411 (id: 18329)
+Copyright 2003-2018 Intel Corporation.
+}
+2021/04/03 14:18:20 MPI publisher: intel ; version: 2018
+2021/04/03 14:18:20 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+Stopped: false
+OriginalData: 2
+FilteredData: 0.
+2021/04/03 14:18:20 Process Exiting with Code:  1
