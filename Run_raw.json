@@ -1,0 +1,171 @@
+{
+    "runId": "project-hyperdrive-new_1617623726_2f05be23",
+    "runUuid": "8d9ecb92-96a9-47d8-be49-d6aa872e26eb",
+    "parentRunUuid": null,
+    "rootRunUuid": "8d9ecb92-96a9-47d8-be49-d6aa872e26eb",
+    "target": "auto-ml-gyula-03",
+    "status": "Queued",
+    "parentRunId": null,
+    "startTimeUtc": null,
+    "endTimeUtc": null,
+    "error": null,
+    "warnings": null,
+    "tags": {
+        "_aml_system_ComputeTargetStatus": "{\"AllocationState\":\"steady\",\"PreparingNodeCount\":0,\"RunningNodeCount\":0,\"CurrentNodeCount\":0}"
+    },
+    "properties": {
+        "_azureml.ComputeTargetType": "amlcompute",
+        "ContentSnapshotId": "a1d681e6-526b-4879-a095-b2109099ea1d",
+        "ProcessInfoFile": "azureml-logs/process_info.json",
+        "ProcessStatusFile": "azureml-logs/process_status.json"
+    },
+    "inputDatasets": [],
+    "outputDatasets": [],
+    "runDefinition": {
+        "script": "train.py",
+        "command": "",
+        "useAbsolutePath": false,
+        "arguments": [
+            "--C",
+            "1.5",
+            "--max_iter",
+            "100"
+        ],
+        "sourceDirectoryDataStore": null,
+        "framework": "Python",
+        "communicator": "None",
+        "target": "auto-ml-gyula-03",
+        "dataReferences": {},
+        "data": {},
+        "outputData": {},
+        "jobName": null,
+        "maxRunDurationSeconds": 2592000,
+        "nodeCount": 1,
+        "priority": null,
+        "credentialPassthrough": false,
+        "identity": null,
+        "environment": {
+            "name": "Experiment project-hyperdrive-new Environment",
+            "version": "Autosave_2021-04-05T11:55:27Z_94f8a614",
+            "python": {
+                "interpreterPath": "python",
+                "userManagedDependencies": false,
+                "condaDependencies": {
+                    "channels": [
+                        "anaconda",
+                        "conda-forge"
+                    ],
+                    "dependencies": [
+                        "python=3.6.2",
+                        {
+                            "pip": [
+                                "azureml-defaults"
+                            ]
+                        }
+                    ],
+                    "name": "azureml_da3e97fcb51801118b8e80207f3e01ad"
+                },
+                "baseCondaEnvironment": null
+            },
+            "environmentVariables": {
+                "EXAMPLE_ENV_VAR": "EXAMPLE_VALUE"
+            },
+            "docker": {
+                "baseImage": "mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20210220.v1",
+                "platform": {
+                    "os": "Linux",
+                    "architecture": "amd64"
+                },
+                "baseDockerfile": null,
+                "baseImageRegistry": {
+                    "address": null,
+                    "username": null,
+                    "password": null
+                },
+                "enabled": false,
+                "arguments": []
+            },
+            "spark": {
+                "repositories": [],
+                "packages": [],
+                "precachePackages": true
+            },
+            "inferencingStackVersion": null
+        },
+        "history": {
+            "outputCollection": true,
+            "directoriesToWatch": [
+                "logs"
+            ],
+            "enableMLflowTracking": true,
+            "snapshotProject": true
+        },
+        "spark": {
+            "configuration": {
+                "spark.app.name": "Azure ML Experiment",
+                "spark.yarn.maxAppAttempts": "1"
+            }
+        },
+        "parallelTask": {
+            "maxRetriesPerWorker": 0,
+            "workerCountPerNode": 1,
+            "terminalExitCodes": null,
+            "configuration": {}
+        },
+        "amlCompute": {
+            "name": null,
+            "vmSize": null,
+            "retainCluster": false,
+            "clusterMaxNodeCount": null
+        },
+        "aiSuperComputer": {
+            "instanceType": null,
+            "imageVersion": null,
+            "location": null,
+            "aiSuperComputerStorageData": null,
+            "interactive": false,
+            "scalePolicy": null,
+            "virtualClusterArmId": null,
+            "tensorboardLogDirectory": null
+        },
+        "tensorflow": {
+            "workerCount": 1,
+            "parameterServerCount": 1
+        },
+        "mpi": {
+            "processCountPerNode": 1
+        },
+        "pyTorch": {
+            "communicationBackend": "nccl",
+            "processCount": null
+        },
+        "hdi": {
+            "yarnDeployMode": "Cluster"
+        },
+        "containerInstance": {
+            "region": null,
+            "cpuCores": 2,
+            "memoryGb": 3.5
+        },
+        "exposedPorts": null,
+        "docker": {
+            "useDocker": false,
+            "sharedVolumes": true,
+            "shmSize": "2g",
+            "arguments": []
+        },
+        "cmk8sCompute": {
+            "configuration": {}
+        },
+        "commandReturnCodeConfig": {
+            "returnCode": "Zero",
+            "successfulReturnCodes": []
+        },
+        "environmentVariables": {}
+    },
+    "logFiles": {
+        "azureml-logs/20_image_build_log.txt": "https://mlstrg142000.blob.core.windows.net/azureml/ExperimentRun/dcid.project-hyperdrive-new_1617623726_2f05be23/azureml-logs/20_image_build_log.txt?sv=2019-02-02&sr=b&sig=47m1mLjlovG477Xs6RCjfM14%2F4h%2Fyg50T4IruSFByZI%3D&st=2021-04-05T11%3A45%3A32Z&se=2021-04-05T19%3A55%3A32Z&sp=r"
+    },
+    "revision": 8,
+    "endpointSettings": {}
+}
