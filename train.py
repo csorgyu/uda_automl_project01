@@ -37,17 +37,17 @@ def clean_data(data):
     y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
     return x_df, y_df
 
-ds = TabularDatasetFactory.from_delimited_files(path="https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv", separator=',')
+#ds = TabularDatasetFactory.from_delimited_files(path="https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv", separator=',')
+#x_train, y_train, x_text, y_test = train_test_split(x,y, test_size=0.3, random_state=42)
 
-x_df = ds.to_pandas_dataframe()
-x_df.head()
 
-x,y = clean_data(ds)
 
-x.head()
-
-x_train, y_train, x_text, y_test = train_test_split(x,y, test_size=0.3, random_state=42)
-
+path = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
+ds = TabularDatasetFactory.from_delimited_files(path, validate=True, include_path=False, infer_column_types=True,
+                                                set_column_types=None, separator=',', header=True, partition_format=None, support_multi_line=False, empty_as_string=False)
+x, y = clean_data(ds)
+x_train, x_test, y_train, y_test = train_test_split(
+    x, y, test_size=0.2, random_state=42)
 run = Run.get_context()
 
 def main():
