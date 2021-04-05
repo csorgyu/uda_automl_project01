@@ -37,9 +37,6 @@ def clean_data(data):
     y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
     return x_df, y_df
 
-#ds = TabularDatasetFactory.from_delimited_files(path="https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv", separator=',')
-#x_train, y_train, x_text, y_test = train_test_split(x,y, test_size=0.3, random_state=42)
-
 
 
 path = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
@@ -66,6 +63,10 @@ def main():
 
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
+    os.makedirs('outputs', exist_ok=True)
+    joblib.dump(value=model, filename='outputs/model.pkl')
 
 if __name__ == '__main__':
     main()
+
+
