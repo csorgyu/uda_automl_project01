@@ -70,5 +70,6 @@ With 4 processing nodes the truncation selection with 50% seemed well defined us
 **What are some areas of improvement for future experiments? Why might these improvements help the model?**
 
 ## Proof of cluster clean up
-**If you did not delete your compute cluster in the code, please complete this section. Otherwise, delete this section.**
-**Image of cluster marked for deletion**
+During running
+![image](https://user-images.githubusercontent.com/81808810/113709673-12acf700-96e3-11eb-9e7a-567e1e62dd4b.png)
+
