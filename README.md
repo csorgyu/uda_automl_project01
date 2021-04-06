@@ -64,10 +64,23 @@ With 4 processing nodes the truncation selection with 50% seemed well defined us
 
 
 ## Pipeline comparison
-**Compare the two models and their performance. What are the differences in accuracy? In architecture? If there was a difference, why do you think there was one?**
+### Model comparison
+The hyperdrive approach focuses only on the hyperparameters of one specific model, it does not go through a wide range of possible models and transformation combinations.
+This can be useful, if we want to work with a specific model version and we want to have a full control over the featurization process. This approach is good when tuning a small number of selected models or models in production already.
+The auto ML approach is useful if we want to explore a wide range of models and transoformations, i.e. in the initial exploration phase, also to get some hints about the possible best transformations. This approach is good when we are enriching our understanding about the data and the solution and want to narrow down the modeling efforts to a smaller set of vvariants.
+Both modeling tecniques can obtain high performance models, in this specific case automl was able to generate slightly better model, than the baseline, even after optimization.
+
+### Architecture comparison
+The hyperdrive architecture and the automl architecture are different in a sense, that hyperdrive separates the model code from the orchestration and optimization code. This is useful in some cases, when the modeling and the model operationalization is done by different teams.
+
+
+
+
 
 ## Future work
-**What are some areas of improvement for future experiments? Why might these improvements help the model?**
+The hyperoptimization effort was largely run as a baselining and a proof, that the necessary utilities (sampler, stopping) can be used. In case of more sophisticated baselining this part need to be adjusted to the modeling effort which delivers a more mature baseline.
+Accuracy may not be the only metric important in a classification. Tuning the model along differnt metrics would be an important use case, especially if Type1 and Type2 errors have different pricetags.
+From the other side I have not used allowed_models/blocked_models features here, these can be important, if we have specific business requirements about the type of model we need to use (i.e. client interpretability.)
 
 ## Proof of cluster clean up
 During running
