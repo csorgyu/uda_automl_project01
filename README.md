@@ -68,7 +68,9 @@ Automl generated a VotingEnsembe model, that is compared to the hyperdrive Logis
 ### Model comparison
 The hyperdrive approach focuses only on the hyperparameters of one specific model, it does not go through a wide range of possible models and transformation combinations.
 This can be useful, if we want to work with a specific model version and we want to have a full control over the featurization process. This approach is good when tuning a small number of selected models or models in production already.
-The auto ML approach is useful if we want to explore a wide range of models and transoformations, i.e. in the initial exploration phase, also to get some hints about the possible best transformations. This approach is good when we are enriching our understanding about the data and the solution and want to narrow down the modeling efforts to a smaller set of variants.
+The auto ML approach is useful if we want to explore a wide range of models and transoformations, i.e. in the initial exploration phase, also to get some hints about the possible best transformations. This approach is good when we are enriching our understanding about the data and the solution and want to narrow down the modeling efforts to a smaller set of variants. It also helps with data featurization.
+![image](https://user-images.githubusercontent.com/81808810/113715243-8fdb6a80-96e9-11eb-966c-a08b2d7409af.png)
+
 Both modeling tecniques can obtain high performance models, in this specific case automl was able to generate slightly better model as the best, than the baseline, even after optimization, however some selection were performing poorer. Also in the given parameter space for hyperdrive the hyperparameter did not make difference, for all values the accuracy was the same.
 
 
@@ -80,6 +82,9 @@ Automl provides model explanation and interpretability toolkit, which is necessa
 
 ![image](https://user-images.githubusercontent.com/81808810/113714065-4a6a6d80-96e8-11eb-9949-08dc2533b2cf.png)
 
+The registration of the models has been done in both of the cases
+![image](https://user-images.githubusercontent.com/81808810/113715380-b9949180-96e9-11eb-88f8-e5853e84dbad.png)
+
 
 
 ## Future work
@@ -90,4 +95,8 @@ From the other side I have not used allowed_models/blocked_models features here,
 ## Proof of cluster clean up
 During running
 ![image](https://user-images.githubusercontent.com/81808810/113709673-12acf700-96e3-11eb-9e7a-567e1e62dd4b.png)
+
+After running on delete
+![image](https://user-images.githubusercontent.com/81808810/113715485-d761f680-96e9-11eb-85fa-ea0eaf36bc7e.png)
+
 
