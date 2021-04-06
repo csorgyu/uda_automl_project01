@@ -7,11 +7,21 @@ This model is then compared to an Azure AutoML run.
 
 ## Summary
 **In 1-2 sentences, explain the problem statement: e.g "This dataset contains data about... we seek to predict..."**
+The dataset contains data about marketing campaigns based on phonecalls from banking institutions. The data contains client data (numeric, categorical), info about the last campaign, other attributes about previous campaign and time aspects, social and economic context.
+The prediction excercise was understanding whether or not a client subscribed for term deposit, this is a classification problem.
 
 **In 1-2 sentences, explain the solution: e.g. "The best performing model was a ..."**
+The best performing model vas a voting ensemble.
 
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
+### Data ingestion
+
+### Model training script 
+
+### Algorythm
+
+### Hyperparameter tuning and model management
 
 **What are the benefits of the parameter sampler you chose?**
 
